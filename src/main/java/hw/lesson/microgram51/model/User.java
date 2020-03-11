@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @CompoundIndex(def = "{'name': 1, 'email': 1}")
 public class User {
-     @Id public String id;
+    @Id public String id;
     private String name;
     private String email;
     private String password;
@@ -29,6 +29,63 @@ public class User {
         this.email = email;
         this.posts = posts;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getPublications() {
+        return publications;
+    }
+
+    public void setPublications(int publications) {
+        this.publications = publications;
+    }
+
+    public int getSubscriber() {
+        return subscriber;
+    }
+
+    public void setSubscriber(int subscriber) {
+        this.subscriber = subscriber;
+    }
+
+    public int getSubscription() {
+        return subscription;
+    }
+
+    public void setSubscription(int subscription) {
+        this.subscription = subscription;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
 
 
     public void likes() {
