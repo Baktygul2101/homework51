@@ -6,6 +6,7 @@ import hw.lesson.microgram51.model.User;
 import hw.lesson.microgram51.repository.PostRepo;
 import hw.lesson.microgram51.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -66,4 +67,17 @@ public class UserController {
         return user;
     }
 
+    @GetMapping("/users")
+    public Iterable<User> getUsers() {
+        Sort sort = Sort.by(Sort.Order.asc("name"));
+        return userRepo.findAll(sort);
+    }
+    @GetMapping("/user {name}")
+    public User getUserByName(String name) {
+       return userRepo.findByName(name);
+    }
+    @GetMapping("/user {email}")
+    public User getUserByEmail(String email) {
+        return userRepo.findByEmail(email);
+    }
 }
